@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: Assets/uPainter/Samples/Samples.unity
+    guid: 13385143accd0c9418b0691c5bacf558
+  - enabled: 0
+    path: Assets/uPainter/Samples/Painter/Painter.unity
+    guid: 5a3e47c35eed7d149b032b6b361a1c89
+  - enabled: 0
+    path: Assets/uPainter/Samples/RawImage/AddMosaic.unity
+    guid: c555585190c006b468a36c4063159851
+  - enabled: 0
+    path: Assets/uPainter/Samples/RawImage/Benchmark.unity
+    guid: d38297168fbc65240bfdb3c6acda9bac
+  - enabled: 0
+    path: Assets/uPainter/Samples/RawImage/PixelPaint.unity
+    guid: 4e4c88df82dd590469df673ae4767720
+  - enabled: 0
+    path: Assets/uPainter/Samples/RawImage/RawImage.unity
+    guid: c3f33b5fa37e8f548b2c0773da9eb49f
+  - enabled: 0
+    path: Assets/uPainter/Samples/RawImage/RawImageWithRawTexture.unity
+    guid: 5d567b3e1e3773e469e003017bf84a3c
+  - enabled: 0
+    path: Assets/uPainter/Samples/RawImage/ScratchCard.unity
+    guid: 6d9d01b9737187d4cae9c65adf05559d
+  - enabled: 0
+    path: Assets/uPainter/Samples/RawImage/ScratchCardEx.unity
+    guid: 68dfe642f83b33e40837dbc5e5e05be6
+  - enabled: 0
+    path: Assets/uPainter/Samples/PaintMesh/PaintMesh.unity
+    guid: e1f73d7015f72894ca7bac6af45fc72f
+  - enabled: 0
+    path: Assets/uPainter/Samples/PaintMesh/PaintMesh2.unity
+    guid: 30d1c897a3a80ac468fdffbaae8ca79e
+  - enabled: 1
+    path: Assets/Scenes/mypaint.unity
+    guid: ebcc49fee8815db46bc13b05403634bb
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 624759eff99861548a0c6991e8288f0b, type: 2}
