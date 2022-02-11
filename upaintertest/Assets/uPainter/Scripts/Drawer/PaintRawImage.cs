@@ -110,6 +110,7 @@ namespace Wing.uPainter
             if (pen.pressure.ReadValue() > 0) //pen on tablet. use pen position for painting
             {
                 _lastMousePosition = pen.position.ReadValue();//pen position auf maus position schreiben
+               // _lastMousePosition = Camera.main.ScreenToWorldPoint(_lastMousePosition);
             }
             else
             {
