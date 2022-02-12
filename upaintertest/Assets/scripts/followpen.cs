@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class movesphere : MonoBehaviour
+public class followpen : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
