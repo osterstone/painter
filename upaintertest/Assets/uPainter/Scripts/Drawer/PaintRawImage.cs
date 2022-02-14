@@ -19,6 +19,7 @@ namespace Wing.uPainter
     IPointerDownHandler, IPointerExitHandler, IPointerEnterHandler
     {
         public bool EnablePaint = true;
+        public bool PenActive = false;
 
         [SerializeField]
         Drawer _drawer = new Drawer();
@@ -53,17 +54,17 @@ namespace Wing.uPainter
 
         }
 
-        public void OnPointerDown(PointerEventData eventData)
+        public void OnPointerDown(PointerEventData eventData) //komplett durch druckabfrage in update() ersetzt
         {
             if (Input.GetMouseButton(0))
             {
-                _drawer.Begin();
+               // _drawer.Begin();
             }
         }
 
-        public void OnPointerUp(PointerEventData eventData)
+        public void OnPointerUp(PointerEventData eventData) //komplett durch druckabfrage in update() ersetzt
         {
-            _drawer.End();
+           // _drawer.End();
         }
 
         public void OnPointerMove(Vector3 pos)
@@ -109,11 +110,21 @@ namespace Wing.uPainter
             Pen pen = Pen.current;
             if (pen.pressure.ReadValue() > 0) //pen on tablet. use pen position for painting
             {
+                if (!PenActive)
+                {
+                    _drawer.Begin();
+                    PenActive = true;
+                }
                 _lastMousePosition = pen.position.ReadValue();//pen position auf maus position schreiben
                // _lastMousePosition = Camera.main.ScreenToWorldPoint(_lastMousePosition);
             }
             else
             {
+                if (PenActive)
+                {
+                    _drawer.End();
+                    PenActive = false;
+                }
                 _lastMousePosition = Input.mousePosition;
             }
              OnPointerMove(_lastMousePosition);
