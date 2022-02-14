@@ -16,6 +16,14 @@ public class brushmanager : MonoBehaviour
     BaseBrush _brush;
     GameObject rawImage;
     GameObject b;
+    GameObject psystemQ;
+    GameObject psystemW;
+    GameObject psystemE;
+    ParticleSystem pQ;
+    ParticleSystem pW;
+    ParticleSystem pE;
+
+
     private int activePen = 0;
 
 void setBrushParameter(Color color, float softness,float size, EBlendMode blend) 
@@ -38,11 +46,27 @@ void setBrushParameter(Color color, float softness,float size, EBlendMode blend)
         paintCanvas = rawImage.GetComponent<RawImagePaintCanvas>();
         paintCanvas.Brush = _brush;
         setBrushParameter(penColor[activePen], softness[activePen], brushsize[activePen], brushBlend[activePen]);
+       
+        //particle systems
+        psystemQ = GameObject.Find("Particle SystemQ");
+        pQ = psystemQ.GetComponent<ParticleSystem>();
+        pQ.Stop();
+        psystemW = GameObject.Find("Particle SystemW");
+        pW = psystemW.GetComponent<ParticleSystem>();
+        pW.Stop();
+        psystemE = GameObject.Find("Particle SystemE");
+        pE = psystemE.GetComponent<ParticleSystem>();
+        pE.Stop();
+       // psystemQ.SetActive(false);
+       // psystemW.SetActive(false);
+       // psystemE.SetActive(false);
 
     }
     // Update is called once per frame
     void Update()
     {
+       //painting
+
         Pen pen = Pen.current;
         penPressure = pen.pressure.ReadValue();
         _brush.Size = brushsize[activePen] * penPressure;
@@ -80,6 +104,36 @@ void setBrushParameter(Color color, float softness,float size, EBlendMode blend)
             setBrushParameter(penColor[activePen], softness[activePen], brushsize[activePen], brushBlend[activePen]);
 
         }
+
+// particle systems
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            pQ.Play();
+            pW.Stop();
+            pE.Stop();
+        }
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            pQ.Stop();
+            pW.Play();
+            pE.Stop();
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+           pQ.Stop();
+           pW.Stop();
+           pE.Play();
+
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            pQ.Stop();
+            pW.Stop();
+            pE.Stop();
+
+        }
+
 
         else if (Input.GetKeyDown("escape"))
         {
