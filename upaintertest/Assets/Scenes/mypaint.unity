@@ -189,6 +189,7 @@ MonoBehaviour:
     width: 1
     height: 1
   EnablePaint: 1
+  PenActive: 0
   _drawer:
     ReplaceBrush: {fileID: 0}
     ShowPreview: 0
@@ -434,7 +435,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
-  prewarm: 1
+  prewarm: 0
   playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -5200,7 +5201,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
+  m_TargetTexture: {fileID: 8400000, guid: 18d50c3763661854fb60f928516598a9, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -5270,7 +5271,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!54 &453155789
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5665,7 +5666,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
-  prewarm: 1
+  prewarm: 0
   playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -10613,7 +10614,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
-  prewarm: 1
+  prewarm: 0
   playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -15425,7 +15426,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2090966219}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f1f055d5d8e88942a01f44ae0cdb99a, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c934377dd63aa34796b5b2a72754ab5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!54 &2090966225

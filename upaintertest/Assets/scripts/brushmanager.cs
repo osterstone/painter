@@ -41,7 +41,8 @@ void setBrushParameter(Color color, float softness,float size, EBlendMode blend)
     // Start is called before the first frame update
     void Start()
     {
-        _brush = new SolidBrush();  
+       // _brush = new SolidBrush();
+        _brush = (BaseBrush)ScriptableObject.CreateInstance("SolidBrush");
         rawImage = GameObject.Find("RawImage");
         paintCanvas = rawImage.GetComponent<RawImagePaintCanvas>();
         paintCanvas.Brush = _brush;
