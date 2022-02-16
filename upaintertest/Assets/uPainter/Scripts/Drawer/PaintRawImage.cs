@@ -108,7 +108,7 @@ namespace Wing.uPainter
             // wenn Pen aktiv, die Positions werte des Pens als MousePosition in den Painter uebertragen
             // wenn Pen nicht aktiv, Mouse nehmen
             Pen pen = Pen.current;
-            if (pen.pressure.ReadValue() > 0) //pen on tablet. use pen position for painting
+            if (pen.pressure.ReadValue() > 0.0f) //pen on tablet. use pen position for painting
             {
                 if (!PenActive)
                 {
@@ -125,9 +125,9 @@ namespace Wing.uPainter
                     _drawer.End();
                     PenActive = false;
                 }
-                _lastMousePosition = Input.mousePosition;
+                _lastMousePosition = pen.position.ReadValue();//pen position auf maus position schreiben
             }
-             OnPointerMove(_lastMousePosition);
+            OnPointerMove(_lastMousePosition);
         }
 
 #if UNITY_EDITOR
