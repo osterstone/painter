@@ -10427,6 +10427,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc59199c1ff914040a0be38ba24f556b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  penColor:
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 0, g: 1, b: 0, a: 1}
+  - {r: 0, g: 0, b: 0, a: 1}
+  softness:
+  - 1.2
+  - 0.2
+  - 2
+  - 0.075
+  brushsize:
+  - 0.1
+  - 0.1
+  - 0.4
+  - 0.03
   penPressure: 22
 --- !u!4 &1142090958
 Transform:
