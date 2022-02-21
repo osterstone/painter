@@ -6,10 +6,10 @@ using Wing.uPainter;
 
 public class brushmanager : MonoBehaviour
 {
-    public Color[] penColor = {Color.white,Color.red,Color.green,Color.black};
-    public float[] softness = { 1.2f, 0.2f, 2.0f,0.075f};
-    public float[] brushsize = { 0.1f, 0.1f, 0.4f ,0.03f};
-    EBlendMode[] brushBlend = { EBlendMode.Normal, EBlendMode.Normal, EBlendMode.Normal, EBlendMode.Normal };
+    public Color[] penColor = new Color[5] { Color.white, Color.red, Color.green, Color.black, Color.blue };
+    public float[] softness = { 1.2f, 0.2f, 2.0f,0.075f,2.0f};
+    public float[] brushsize = {0.1f, 0.1f, 0.4f, 0.03f, 4.0f};
+    EBlendMode[] brushBlend = { EBlendMode.Normal, EBlendMode.Normal, EBlendMode.Normal, EBlendMode.Normal,EBlendMode.Normal };
 
     public float penPressure = 22f;
     PaintCanvas paintCanvas;
@@ -105,8 +105,16 @@ void setBrushParameter(Color color, float softness,float size, EBlendMode blend)
             setBrushParameter(penColor[activePen], softness[activePen], brushsize[activePen], brushBlend[activePen]);
 
         }
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            activePen = 4;
+            _brush = new SolidBrush();
+            paintCanvas.Brush = _brush;
+            setBrushParameter(penColor[activePen], softness[activePen], brushsize[activePen], brushBlend[activePen]);
 
-// particle systems
+        }
+
+        // particle systems
 
         if (Input.GetKeyDown(KeyCode.Q))
         {

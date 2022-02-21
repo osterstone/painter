@@ -189,7 +189,7 @@ MonoBehaviour:
     width: 1
     height: 1
   EnablePaint: 1
-  PenActive: 0
+  PenActive: 1
   _drawer:
     ReplaceBrush: {fileID: 0}
     ShowPreview: 0
@@ -5216,7 +5216,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 8400000, guid: 18d50c3763661854fb60f928516598a9, type: 2}
+  m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -10432,16 +10432,19 @@ MonoBehaviour:
   - {r: 1, g: 0, b: 0, a: 1}
   - {r: 0, g: 1, b: 0, a: 1}
   - {r: 0, g: 0, b: 0, a: 1}
+  - {r: 0, g: 0, b: 0, a: 1}
   softness:
   - 1.2
   - 0.2
   - 2
+  - 0.075
   - 0.075
   brushsize:
   - 0.1
   - 0.1
   - 0.4
   - 0.03
+  - 1.35
   penPressure: 22
 --- !u!4 &1142090958
 Transform:
@@ -10451,7 +10454,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1142090956}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 439.5, y: 253.66763, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
