@@ -7,7 +7,7 @@ using Wing.uPainter;
 public class brushmanager : MonoBehaviour
 {
     public Color[] penColor = new Color[5] { Color.white, Color.red, Color.green, Color.black, Color.blue };
-    public float[] softness = { 1.2f, 0.2f, 2.0f,0.075f,2.0f};
+    public float[] softness = { 1.2f, 0.2f, 2.0f,0.075f,1.0f};
     public float[] brushsize = {0.1f, 0.1f, 0.4f, 0.03f, 4.0f};
     EBlendMode[] brushBlend = { EBlendMode.Normal, EBlendMode.Normal, EBlendMode.Normal, EBlendMode.Normal,EBlendMode.Normal };
 
