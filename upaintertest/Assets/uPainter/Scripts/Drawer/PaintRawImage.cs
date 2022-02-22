@@ -76,7 +76,7 @@ namespace Wing.uPainter
 
             if (!Input.GetMouseButton(0) && !_drawer.InPreview)
             {
-                _drawer.End();
+               // _drawer.End(); //rausgenommen bei test bei rid. Kam hier rein, auch wenn der Stift gedrueckt war
             }
 
             if (_drawer.InPreview)
