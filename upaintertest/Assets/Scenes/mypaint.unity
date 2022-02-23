@@ -189,7 +189,7 @@ MonoBehaviour:
     width: 1
     height: 1
   EnablePaint: 1
-  PenActive: 1
+  PenActive: 0
   _drawer:
     ReplaceBrush: {fileID: 0}
     ShowPreview: 0
@@ -5168,6 +5168,7 @@ GameObject:
   - component: {fileID: 368926208}
   - component: {fileID: 368926211}
   - component: {fileID: 368926212}
+  - component: {fileID: 368926213}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5267,6 +5268,19 @@ MonoBehaviour:
   _sourceCamera: {fileID: 0}
   _sourceTexture: {fileID: 8400000, guid: 18d50c3763661854fb60f928516598a9, type: 2}
   _resources: {fileID: 11400000, guid: f449ebbe2051c2e4d993eaa773a410de, type: 2}
+--- !u!114 &368926213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368926207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1e1ae3c1a8723f44b99b167eee1ca79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenshotname: screen.png
 --- !u!1 &453155788
 GameObject:
   m_ObjectHideFlags: 0
