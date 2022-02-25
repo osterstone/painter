@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class followpen : MonoBehaviour
 {
+    public float zposition = 88.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +18,7 @@ public class followpen : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         Pen pen = Pen.current;
         Vector3 position = pen.position.ReadValue();
-        position.z = 88.0f;
+        position.z = zposition;
 
         Vector3 worldposition = Camera.main.ScreenToWorldPoint(position);
         transform.position =  worldposition;
