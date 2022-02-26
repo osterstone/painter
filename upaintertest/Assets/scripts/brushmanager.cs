@@ -58,9 +58,13 @@ void setBrushParameter(Color color, float softness,float size, EBlendMode blend)
         psystemE = GameObject.Find("Particle SystemE");
         pE = psystemE.GetComponent<ParticleSystem>();
         pE.Stop();
-       // psystemQ.SetActive(false);
-       // psystemW.SetActive(false);
-       // psystemE.SetActive(false);
+        // psystemQ.SetActive(false);
+        // psystemW.SetActive(false);
+        // psystemE.SetActive(false);
+
+        //switch cursor off and hide
+       
+        //Cursor.visible = false;
 
     }
     // Update is called once per frame
