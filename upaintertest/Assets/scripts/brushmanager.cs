@@ -63,8 +63,9 @@ void setBrushParameter(Color color, float softness,float size, EBlendMode blend)
         // psystemE.SetActive(false);
 
         //switch cursor off and hide
-       
+
         //Cursor.visible = false;
+        
 
     }
     // Update is called once per frame
