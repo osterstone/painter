@@ -62,9 +62,9 @@ void setBrushParameter(Color color, float softness,float size, EBlendMode blend)
         // psystemW.SetActive(false);
         // psystemE.SetActive(false);
 
-        //switch cursor off and hide
+        // cursor hide
 
-        //Cursor.visible = false;
+        Cursor.visible = false;
         
 
     }
