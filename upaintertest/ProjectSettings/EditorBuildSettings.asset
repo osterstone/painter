@@ -35,7 +35,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/uPainter/Samples/PaintMesh/PaintMesh2.unity
     guid: 30d1c897a3a80ac468fdffbaae8ca79e
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/mypaint.unity
     guid: ebcc49fee8815db46bc13b05403634bb
   - enabled: 0
