@@ -1625,6 +1625,7 @@ GameObject:
   - component: {fileID: 2056313526}
   - component: {fileID: 2056313529}
   - component: {fileID: 2056313530}
+  - component: {fileID: 2056313531}
   m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
@@ -6928,6 +6929,21 @@ ParticleSystemForceField:
         m_RotationOrder: 4
     m_MultiplyDragByParticleSize: 1
     m_MultiplyDragByParticleVelocity: 1
+--- !u!114 &2056313531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056313525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ccd97609ef3d114c8167857c6fc8091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  penPressure: 0
+  maxNoOfParticles: 60
+  minNoOfParticles: 20
 --- !u!1 &2091864756
 GameObject:
   m_ObjectHideFlags: 0
