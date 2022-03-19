@@ -9,6 +9,7 @@ public class brushmanager : MonoBehaviour
     public Color[] penColor = new Color[6] { Color.white, Color.red, Color.green, Color.black, Color.blue ,Color.white};
     public float[] softness = { 1.2f, 0.2f, 2.0f,0.075f,1.0f, 0.0f};
     public float[] brushsize = { 0.1f, 0.1f, 0.4f, 0.03f, 4.0f, 0.03f };
+    public float brushsizeFactor;
    
     EBlendMode[] brushBlend = { EBlendMode.Normal, EBlendMode.Normal, EBlendMode.Normal, EBlendMode.Normal,EBlendMode.Normal, EBlendMode.Normal };
 
@@ -35,15 +36,15 @@ void setBrushParameter(Color color, float softness,float size, EBlendMode blend)
         var sb = paintCanvas.Brush as ScratchBrush;
         sb.Softness = softness;
         }
-        _brush.Size = size;
+        _brush.Size = size*brushsizeFactor;
         _brush.BlendMode = blend;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        _brush = new SolidBrush();
-       // _brush = (BaseBrush)ScriptableObject.CreateInstance("SolidBrush");
+        //_brush = new SolidBrush();
+       _brush = (BaseBrush)ScriptableObject.CreateInstance("SolidBrush");
         rawImage = GameObject.Find("RawImage");
         paintCanvas = rawImage.GetComponent<RawImagePaintCanvas>();
         paintCanvas.Brush = _brush;
@@ -76,7 +77,7 @@ void setBrushParameter(Color color, float softness,float size, EBlendMode blend)
 
         Pen pen = Pen.current;
         penPressure = pen.pressure.ReadValue();
-        _brush.Size = brushsize[activePen] * penPressure;
+        _brush.Size = brushsize[activePen] * penPressure *brushsizeFactor;
          if (activePen == 0)
         {
             Color c = Color.white;
