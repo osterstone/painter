@@ -10465,7 +10465,7 @@ MonoBehaviour:
   - 0.03
   - 1.35
   - 0.03
-  brushsizeFactor: 1
+  brushsizeFactor: 0.4
   penPressure: 22
 --- !u!4 &1142090958
 Transform:
