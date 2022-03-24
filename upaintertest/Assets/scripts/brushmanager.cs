@@ -118,7 +118,7 @@ void setBrushParameter(Color color, float softness,float size, EBlendMode blend)
             setBrushParameter(penColor[activePen], softness[activePen], brushsize[activePen], brushBlend[activePen]);
 
         }
-        if (Input.GetKeyDown(KeyCode.Alpha5))
+        if (Input.GetKeyDown(KeyCode.Y))
         {
             activePen = 4;
             _brush = new SolidBrush();
@@ -126,7 +126,7 @@ void setBrushParameter(Color color, float softness,float size, EBlendMode blend)
             setBrushParameter(penColor[activePen], softness[activePen], brushsize[activePen], brushBlend[activePen]);
 
         }
-        if (Input.GetKeyDown(KeyCode.Alpha6))
+        if (Input.GetKeyDown(KeyCode.Alpha5))
         {
             activePen = 5;
             _brush = new SolidBrush();
