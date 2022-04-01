@@ -80,9 +80,13 @@ void setBrushParameter(Color color, float softness,float size, EBlendMode blend)
         _brush.Size = brushsize[activePen] * penPressure *brushsizeFactor;
          if (activePen == 0)
         {
+            //alpha von penpressure abhängig
             Color c = Color.white;
             c.a = penPressure;
-            _brush.BrushColor = c; 
+            _brush.BrushColor = c;
+            //softness von penpressure abhängig
+            var sb = paintCanvas.Brush as ScratchBrush;
+            sb.Softness = softness[activePen] * penPressure;
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
