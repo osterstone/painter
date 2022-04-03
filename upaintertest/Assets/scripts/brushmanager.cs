@@ -6,12 +6,12 @@ using Wing.uPainter;
 
 public class brushmanager : MonoBehaviour
 {
-    public Color[] penColor = new Color[6] { Color.white, Color.red, Color.green, Color.black, Color.blue ,Color.white};
-    public float[] softness = { 1.2f, 0.2f, 2.0f,0.075f,1.0f, 0.0f};
-    public float[] brushsize = { 0.1f, 0.1f, 0.4f, 0.03f, 4.0f, 0.03f };
+    public Color[] penColor = new Color[7] { Color.white, Color.red, Color.green, Color.black, Color.blue ,Color.white, Color.white };
+    public float[] softness = { 1.2f, 0.2f, 2.0f,0.075f,1.0f, 0.0f, 0.0f};
+    public float[] brushsize = { 0.1f, 0.1f, 0.4f, 0.03f, 4.0f, 0.03f,0.1f };
     public float brushsizeFactor;
    
-    EBlendMode[] brushBlend = { EBlendMode.Normal, EBlendMode.Normal, EBlendMode.Normal, EBlendMode.Normal,EBlendMode.Normal, EBlendMode.Normal };
+    EBlendMode[] brushBlend = { EBlendMode.Normal, EBlendMode.Normal, EBlendMode.Normal, EBlendMode.Normal,EBlendMode.Normal, EBlendMode.Normal, EBlendMode.Normal };
 
     public float penPressure = 22f;
     PaintCanvas paintCanvas;
@@ -39,6 +39,7 @@ void setBrushParameter(Color color, float softness,float size, EBlendMode blend)
         _brush.Size = size*brushsizeFactor;
         _brush.BlendMode = blend;
     }
+
 
     // Start is called before the first frame update
     void Start()
@@ -136,6 +137,19 @@ void setBrushParameter(Color color, float softness,float size, EBlendMode blend)
             _brush = new SolidBrush();
             paintCanvas.Brush = _brush;
             setBrushParameter(penColor[activePen], softness[activePen], brushsize[activePen], brushBlend[activePen]);
+
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha6)) //pen to delete web in leonies last scene
+        {
+            activePen = 6;
+            _brush = new SolidBrush();
+            paintCanvas.Brush = _brush;
+            setBrushParameter(penColor[activePen], softness[activePen], brushsize[activePen], brushBlend[activePen]);
+
+        }
+        if (Input.GetKeyDown(KeyCode.X)) //clear texture
+        {
+           paintCanvas.ClearAll();
 
         }
 
