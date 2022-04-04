@@ -7,7 +7,7 @@ using Wing.uPainter;
 public class brushmanager : MonoBehaviour
 {
     public Color[] penColor = new Color[7] { Color.white, Color.red, Color.green, Color.black, Color.blue ,Color.white, Color.white };
-    public float[] softness = { 1.2f, 0.2f, 2.0f,0.075f,1.0f, 0.0f, 0.0f};
+    public float[] softness = { 0.6f, 0.2f, 2.0f,0.075f,1.0f, 0.0f, 0.0f};
     public float[] brushsize = { 0.1f, 0.1f, 0.4f, 0.03f, 4.0f, 0.03f,0.1f };
     public float brushsizeFactor;
    
@@ -86,15 +86,15 @@ void setBrushParameter(Color color, float softness,float size, EBlendMode blend)
             c.a = penPressure;
             _brush.BrushColor = c;
             //softness von penpressure abhängig
-            var sb = paintCanvas.Brush as ScratchBrush;
-            sb.Softness = softness[activePen] * penPressure;
+            //var sb = paintCanvas.Brush as ScratchBrush;
+            //sb.Softness = softness[activePen] * penPressure;
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             activePen = 0;
-            _brush = new SolidBrush();
-             paintCanvas.Brush = _brush;
+           _brush = new SolidBrush();
+            paintCanvas.Brush = _brush;
             setBrushParameter(penColor[activePen], softness[activePen], brushsize[activePen], brushBlend[activePen]);
             penColor[activePen].a = 255;
         }
