@@ -31,8 +31,11 @@ public class brushmanager : MonoBehaviour
     private const int Solidbrush = 0;
     private const int Grapicbrush = 1;
 
+    public OSC myosc;
 
-void setBrushParameter(Color color, float softness,float size, EBlendMode blend) 
+
+
+    void setBrushParameter(Color color, float softness,float size, EBlendMode blend) 
     {
         _brush.BrushColor = color;
         if (paintCanvas.Brush is ScratchBrush)
@@ -62,6 +65,8 @@ void setActiveBrush(int penno,int brush)
     }
 
 
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -89,9 +94,19 @@ void setActiveBrush(int penno,int brush)
         // cursor hide
 
         Cursor.visible = false;
-        
+
+        //osc init
+        myosc.SetAddressHandler("/zeichnen/pen", OnReceiveZeichnen);
+
 
     }
+
+    void OnReceiveZeichnen(OscMessage message)
+    {
+        Debug.Log(message.address);
+        Debug.Log(message.GetInt(0));
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -131,43 +146,53 @@ void setActiveBrush(int penno,int brush)
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            activePen = 2;
-            _brush = new SolidBrush();
-            paintCanvas.Brush = _brush;
-            setBrushParameter(penColor[activePen], softness[activePen], brushsize[activePen], brushBlend[activePen]);
+            setActiveBrush(2, Solidbrush);
+           
+            //activePen = 2;
+            //_brush = new SolidBrush();
+            //paintCanvas.Brush = _brush;
+            //setBrushParameter(penColor[activePen], softness[activePen], brushsize[activePen], brushBlend[activePen]);
 
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            activePen = 3;
-            _brush = new SolidBrush();
-            paintCanvas.Brush = _brush;
-            setBrushParameter(penColor[activePen], softness[activePen], brushsize[activePen], brushBlend[activePen]);
+            setActiveBrush(3, Solidbrush);
+
+            //activePen = 3;
+            //_brush = new SolidBrush();
+            //paintCanvas.Brush = _brush;
+            //setBrushParameter(penColor[activePen], softness[activePen], brushsize[activePen], brushBlend[activePen]);
 
         }
         if (Input.GetKeyDown(KeyCode.Y))
         {
-            activePen = 4;
-            _brush = new SolidBrush();
-            paintCanvas.Brush = _brush;
-            setBrushParameter(penColor[activePen], softness[activePen], brushsize[activePen], brushBlend[activePen]);
+            setActiveBrush(4, Solidbrush);
+
+            //activePen = 4;
+            //_brush = new SolidBrush();
+            //paintCanvas.Brush = _brush;
+            //setBrushParameter(penColor[activePen], softness[activePen], brushsize[activePen], brushBlend[activePen]);
 
         }
         if (Input.GetKeyDown(KeyCode.Alpha5))
         {
-            activePen = 5;
-            _brush = new SolidBrush();
-            paintCanvas.Brush = _brush;
-            setBrushParameter(penColor[activePen], softness[activePen], brushsize[activePen], brushBlend[activePen]);
+            setActiveBrush(5, Solidbrush);
+
+            //activePen = 5;
+            //_brush = new SolidBrush();
+            //paintCanvas.Brush = _brush;
+            //setBrushParameter(penColor[activePen], softness[activePen], brushsize[activePen], brushBlend[activePen]);
 
         }
         if (Input.GetKeyDown(KeyCode.Alpha6)) //pen to delete web in leonies last scene
         {
-            activePen = 6;
-            _brush = new SolidBrush();
-            paintCanvas.Brush = _brush;
-            setBrushParameter(penColor[activePen], softness[activePen], brushsize[activePen], brushBlend[activePen]);
+            setActiveBrush(6, Solidbrush);
+
+            //activePen = 6;
+            //_brush = new SolidBrush();
+            //paintCanvas.Brush = _brush;
+            //setBrushParameter(penColor[activePen], softness[activePen], brushsize[activePen], brushBlend[activePen]);
 
         }
         if (Input.GetKeyDown(KeyCode.X)) //clear texture
