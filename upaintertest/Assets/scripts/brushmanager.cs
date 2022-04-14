@@ -28,6 +28,10 @@ public class brushmanager : MonoBehaviour
 
     private int activePen = 0;
 
+    private const int Solidbrush = 0;
+    private const int Grapicbrush = 1;
+
+
 void setBrushParameter(Color color, float softness,float size, EBlendMode blend) 
     {
         _brush.BrushColor = color;
@@ -38,6 +42,23 @@ void setBrushParameter(Color color, float softness,float size, EBlendMode blend)
         }
         _brush.Size = size*brushsizeFactor;
         _brush.BlendMode = blend;
+    }
+
+void setActiveBrush(int penno,int brush)
+    {
+        activePen = penno;
+        if (brush == Solidbrush)
+        {
+            _brush = new SolidBrush();
+        }
+        else
+        {
+            _brush = new GrapicBrush();
+        }
+
+        paintCanvas.Brush = _brush;
+        setBrushParameter(penColor[activePen], softness[activePen], brushsize[activePen], brushBlend[activePen]);
+        penColor[activePen].a = 255;
     }
 
 
@@ -92,19 +113,21 @@ void setBrushParameter(Color color, float softness,float size, EBlendMode blend)
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            activePen = 0;
-           _brush = new SolidBrush();
-            paintCanvas.Brush = _brush;
-            setBrushParameter(penColor[activePen], softness[activePen], brushsize[activePen], brushBlend[activePen]);
-            penColor[activePen].a = 255;
+            setActiveBrush(0, Solidbrush);
+           // activePen = 0;
+           //_brush = new SolidBrush();
+           // paintCanvas.Brush = _brush;
+           // setBrushParameter(penColor[activePen], softness[activePen], brushsize[activePen], brushBlend[activePen]);
+           // penColor[activePen].a = 255;
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            activePen = 1;
+            setActiveBrush(1, Grapicbrush);
+           /* activePen = 1;
             _brush = new GrapicBrush();
             paintCanvas.Brush = _brush;
             setBrushParameter(penColor[activePen], softness[activePen], brushsize[activePen], brushBlend[activePen]);
-
+*/
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
