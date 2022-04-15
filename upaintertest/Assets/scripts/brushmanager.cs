@@ -32,7 +32,8 @@ public class brushmanager : MonoBehaviour
     private const int Grapicbrush = 1;
 
     public OSC myosc;
-
+    private int pencommand;
+    private int effect;
 
 
     void setBrushParameter(Color color, float softness,float size, EBlendMode blend) 
@@ -61,7 +62,7 @@ void setActiveBrush(int penno,int brush)
 
         paintCanvas.Brush = _brush;
         setBrushParameter(penColor[activePen], softness[activePen], brushsize[activePen], brushBlend[activePen]);
-        penColor[activePen].a = 255;
+       // penColor[activePen].a = 255;
     }
 
 
@@ -96,15 +97,72 @@ void setActiveBrush(int penno,int brush)
         Cursor.visible = false;
 
         //osc init
-        myosc.SetAddressHandler("/zeichnen/pen", OnReceiveZeichnen);
+        myosc.SetAddressHandler("/zeichnen/pen", OnReceivePenselect);
+        myosc.SetAddressHandler("/zeichnen/clear", OnReceiveClear);
+        myosc.SetAddressHandler("/zeichnen/effect", OnReceiveEffect);
 
 
     }
-
-    void OnReceiveZeichnen(OscMessage message)
+    void OnReceiveEffect(OscMessage message)
+    {
+        effect = message.GetInt(0);
+        switch (effect)
+        {
+            case 0:
+                pQ.Play();
+                pW.Stop();
+                pE.Stop();
+                break;
+            case 1:
+                pQ.Stop();
+                pW.Play();
+                pE.Stop();
+                break;
+            case 2:
+                pQ.Stop();
+                pW.Stop();
+                pE.Play();
+                break;
+            case 3:
+                pQ.Stop();
+                pW.Stop();
+                pE.Stop();
+                break;
+        }
+    }
+    void OnReceiveClear(OscMessage message)
+    {
+        paintCanvas.ClearAll(); //clear paint texture completely
+    }
+    void OnReceivePenselect(OscMessage message)
     {
         Debug.Log(message.address);
         Debug.Log(message.GetInt(0));
+        pencommand= message.GetInt(0);
+        switch (pencommand)
+        {
+            case 0:
+                setActiveBrush(0, Solidbrush);
+                break;
+            case 1:
+                setActiveBrush(1, Grapicbrush);
+                break;
+            case 2:
+                setActiveBrush(2, Solidbrush);
+                break;
+            case 3:
+                setActiveBrush(3, Solidbrush);
+                break;
+            case 4:
+                setActiveBrush(4, Solidbrush);
+                break;
+            case 5:
+                setActiveBrush(5, Solidbrush);
+                break;
+            case 6:
+                setActiveBrush(6, Solidbrush);
+                break;
+        }
     }
 
     // Update is called once per frame

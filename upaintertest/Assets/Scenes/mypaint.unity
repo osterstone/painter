@@ -5219,7 +5219,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 8400000, guid: 18d50c3763661854fb60f928516598a9, type: 2}
+  m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -10486,6 +10486,7 @@ MonoBehaviour:
   - 0.5
   brushsizeFactor: 0.4
   penPressure: 22
+  myosc: {fileID: 1846240672}
 --- !u!4 &1142090958
 Transform:
   m_ObjectHideFlags: 0
