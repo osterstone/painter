@@ -5219,7 +5219,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
+  m_TargetTexture: {fileID: 8400000, guid: 18d50c3763661854fb60f928516598a9, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -10649,6 +10649,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8133def4359daa646951b270e90a2d53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myosc: {fileID: 1846240672}
 --- !u!4 &1807508612
 Transform:
   m_ObjectHideFlags: 0
@@ -10673,6 +10674,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1846240673}
   - component: {fileID: 1846240672}
+  - component: {fileID: 1846240674}
   m_Layer: 0
   m_Name: OSC
   m_TagString: Untagged
@@ -10709,6 +10711,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1846240674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1846240671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a065e273f9c6cb7478c7460c21ef0f64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inPort: 6969
+  outIP: 127.0.0.1
+  outPort: 6161
 --- !u!1 &1946561071
 GameObject:
   m_ObjectHideFlags: 0

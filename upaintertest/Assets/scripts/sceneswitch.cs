@@ -3,9 +3,17 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.InputSystem;
+
+
 public class sceneswitch : MonoBehaviour
 {
-   
+    public OSC myosc;
+    private void Start()
+    {
+        myosc.SetAddressHandler("/zeichnen/myra", SwitchToMyra);
+        myosc.SetAddressHandler("/zeichnen/mypaint", SwitchToMypaint);
+    }
+    
 
     // Update is called once per frame
     void Update()
@@ -25,5 +33,17 @@ public class sceneswitch : MonoBehaviour
             }
 
         }
+    }
+
+
+    public void SwitchToMypaint(OscMessage message)
+    {
+        SceneManager.LoadScene("mypaint", LoadSceneMode.Single);
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName("mypaint"));
+    }
+    public void SwitchToMyra(OscMessage message)
+    {
+        SceneManager.LoadScene("myra", LoadSceneMode.Single);
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName("myra"));
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using Wing.uPainter;
 
@@ -100,9 +101,21 @@ void setActiveBrush(int penno,int brush)
         myosc.SetAddressHandler("/zeichnen/pen", OnReceivePenselect);
         myosc.SetAddressHandler("/zeichnen/clear", OnReceiveClear);
         myosc.SetAddressHandler("/zeichnen/effect", OnReceiveEffect);
+       
 
 
     }
+    void OnReceiveMyra(OscMessage message)
+    {
+        SceneManager.LoadScene("myra", LoadSceneMode.Single);
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName("myra"));
+    }
+    void OnReceiveMypaint(OscMessage message)
+    {
+        SceneManager.LoadScene("mypaint", LoadSceneMode.Single);
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName("mypaint"));
+    }
+
     void OnReceiveEffect(OscMessage message)
     {
         effect = message.GetInt(0);
