@@ -38,12 +38,20 @@ public class sceneswitch : MonoBehaviour
 
     public void SwitchToMypaint(OscMessage message)
     {
-        SceneManager.LoadScene("mypaint", LoadSceneMode.Single);
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName("mypaint"));
+        Scene scene = SceneManager.GetActiveScene();
+        if (scene.name != "mypaint")
+        {
+            SceneManager.LoadScene("mypaint", LoadSceneMode.Single);
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName("mypaint"));
+        }
     }
     public void SwitchToMyra(OscMessage message)
     {
-        SceneManager.LoadScene("myra", LoadSceneMode.Single);
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName("myra"));
+        Scene scene = SceneManager.GetActiveScene();
+        if (scene.name != "myra")
+        {
+            SceneManager.LoadScene("myra", LoadSceneMode.Single);
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName("myra"));
+        }
     }
 }
