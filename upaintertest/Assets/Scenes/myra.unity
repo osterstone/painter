@@ -6482,6 +6482,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zposition: 10
+  smoothInputSpeed: 0.6
 --- !u!330 &2056313530
 ParticleSystemForceField:
   m_ObjectHideFlags: 0
@@ -7192,7 +7193,7 @@ PrefabInstance:
     - target: {fileID: 1033326397759923271, guid: 99ee05ac8c005084181f3f4808b1a885, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 9d45a53c37b29bb48bba57f19131f63b, type: 2}
+      objectReference: {fileID: 2100000, guid: cb668c28c981bf74b93e86ebec054620, type: 2}
     - target: {fileID: 2920672855564947527, guid: 99ee05ac8c005084181f3f4808b1a885, type: 3}
       propertyPath: m_RootOrder
       value: 1
