@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class followpen : MonoBehaviour
 {
@@ -14,6 +15,19 @@ public class followpen : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Confined;
+        Debug.Log("follow pen startedxxxxxxxxxxxxxxxxxx");
+
+    //set damping for each scene separately
+        Scene scene = SceneManager.GetActiveScene();
+        if (scene.name == "mypaint")
+        {
+            smoothInputSpeed = 0.0f;
+        }
+        else if (scene.name == "myra")
+        {
+            smoothInputSpeed = .6f;
+        }
+
     }
 
     // Update is called once per frame
