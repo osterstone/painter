@@ -356,6 +356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zposition: 88
+  smoothInputSpeed: 0.6
 --- !u!199 &360649194
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -5219,7 +5220,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 8400000, guid: 18d50c3763661854fb60f928516598a9, type: 2}
+  m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -10431,6 +10432,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zposition: 88
+  smoothInputSpeed: 0.6
 --- !u!1 &1142090956
 GameObject:
   m_ObjectHideFlags: 0
@@ -10758,6 +10760,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zposition: 88
+  smoothInputSpeed: 0.6
 --- !u!199 &1946561073
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -15655,6 +15658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zposition: 88
+  smoothInputSpeed: 0.6
 --- !u!54 &2090966225
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15684,3 +15688,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zposition: 88
+  smoothInputSpeed: 0.6
