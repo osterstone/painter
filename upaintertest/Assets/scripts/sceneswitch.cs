@@ -54,4 +54,5 @@ public class sceneswitch : MonoBehaviour
             SceneManager.SetActiveScene(SceneManager.GetSceneByName("myra"));
         }
     }
+
 }

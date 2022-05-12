@@ -15,9 +15,10 @@ public class followpen : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Confined;
-        Debug.Log("follow pen startedxxxxxxxxxxxxxxxxxx");
 
-    //set damping for each scene separately
+        
+
+        //set damping for each scene separately
         Scene scene = SceneManager.GetActiveScene();
         if (scene.name == "mypaint")
         {

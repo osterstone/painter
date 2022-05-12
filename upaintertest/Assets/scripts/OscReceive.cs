@@ -9,7 +9,7 @@ public class OscReceive : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        myosc.SetAddressHandler("/zeichnen/pen", OnReceiveZeichnen);
+        //myosc.SetAddressHandler("/zeichnen/pen", OnReceiveZeichnen);
         myosc.SetAllMessageHandler(OnReceiveZeichnen);
 
     }
