@@ -43,8 +43,8 @@ public class numberofparticles : MonoBehaviour
         Debug.Log(gameObject.name);
 
         limitblub = 500.00f;
-        limitblubnomove = 200.0F;
-        limitlines = 200.0f;
+        limitblubnomove = 150.0F;
+        limitlines = 150.0f;
 
         myosc.SetAddressHandler("/zeichnen/maxbub", SetNewMaxForBub);
         myosc.SetAddressHandler("/zeichnen/maxbubnomove", SetNewMaxForBubnomove);

@@ -7,7 +7,13 @@ public class CameraCapture : MonoBehaviour
     public string screenshotname = "screen";
     private string datetime;
     public string filePath;
+    public OSC myosc;
 
+    void OSCScreenshot(OscMessage message)
+    {
+        Capture();
+        Debug.Log("screenshot taken by OSC");
+    }
     private Camera Camera
     {
         get
@@ -22,6 +28,8 @@ public class CameraCapture : MonoBehaviour
     private Camera _camera;
     void Start()
     {
+        myosc.SetAddressHandler("/zeichnen/screenshot", OSCScreenshot);
+
         filePath = Application.dataPath + "/screenshots";
         try
         {
@@ -41,6 +49,7 @@ public class CameraCapture : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Capture();
+            Debug.Log("screenshot taken by keyboard");
         }
     }
 
