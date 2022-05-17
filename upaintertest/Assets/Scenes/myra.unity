@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   penPressure: 0
-  maxNoOfParticles: 500
+  maxNoOfParticles: 100
   minNoOfParticles: 0
   limitblub: 0
   limitblubnomove: 0
@@ -821,8 +821,8 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 60
-      minScalar: 30
+      scalar: 15
+      minScalar: 10
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -7649,8 +7649,8 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 60
-      minScalar: 30
+      scalar: 15
+      minScalar: 10
       maxCurve:
         serializedVersion: 2
         m_Curve:
