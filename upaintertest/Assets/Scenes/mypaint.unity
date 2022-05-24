@@ -10400,8 +10400,7 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -17, y: 3.5, z: 88}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1142090958}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
@@ -10448,6 +10447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc59199c1ff914040a0be38ba24f556b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pen7Color: {r: 1, g: 0, b: 0, a: 1}
   penColor:
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 1, g: 0, b: 0, a: 1}
@@ -10455,13 +10455,13 @@ MonoBehaviour:
   - {r: 0, g: 0, b: 0, a: 1}
   - {r: 0, g: 0, b: 0, a: 1}
   - {r: 1, g: 0.9764151, b: 0.9764151, a: 1}
-  - {r: 1, g: 0.9764151, b: 0.9764151, a: 1}
+  - {r: 0.7529412, g: 0.27450985, b: 0.5370009, a: 1}
   softness:
   - 0
   - 0.2
   - 2
   - 0.075
-  - 0.075
+  - 0
   - 0
   - 0
   brushsize:
@@ -10469,9 +10469,9 @@ MonoBehaviour:
   - 0.1
   - 0.4
   - 0.03
-  - 1.35
-  - 0.03
   - 0.5
+  - 0.03
+  - 0.02
   brushsizeFactor: 0.4
   penPressure: 22
   myosc: {fileID: 1846240672}
@@ -10482,12 +10482,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1142090956}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 17, y: 88, z: -3.4999924}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 851096467}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1254620451
 GameObject:
@@ -15544,7 +15544,6 @@ GameObject:
   - component: {fileID: 2090966223}
   - component: {fileID: 2090966222}
   - component: {fileID: 2090966221}
-  - component: {fileID: 2090966220}
   - component: {fileID: 2090966224}
   - component: {fileID: 2090966225}
   - component: {fileID: 2090966226}
@@ -15555,19 +15554,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!135 &2090966220
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2090966219}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &2090966221
 MeshRenderer:
   m_ObjectHideFlags: 0

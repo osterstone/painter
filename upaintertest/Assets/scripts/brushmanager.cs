@@ -7,10 +7,14 @@ using Wing.uPainter;
 
 public class brushmanager : MonoBehaviour
 {
-    public Color[] penColor = new Color[7] { Color.white, Color.red, Color.green, Color.black, Color.blue ,Color.white, Color.white };
-    public float[] softness = { 0.6f, 0.2f, 2.0f,0.075f,1.0f, 0.0f, 0.0f};
+    public Color pen7Color = new Color(1.0f, 0.0f, 0.0f, 1.0f);
+   
+    public Color[] penColor = new Color[7] { Color.white, Color.red, Color.green, Color.black, Color.blue ,Color.white, Color.red};
+    public float[] softness = { 0.6f, 0.2f, 2.0f,0.075f,1.0f, 0.0f, 0.6f};
     public float[] brushsize = { 0.1f, 0.1f, 0.4f, 0.03f, 4.0f, 0.03f,0.1f };
     public float brushsizeFactor;
+
+    
    
     EBlendMode[] brushBlend = { EBlendMode.Normal, EBlendMode.Normal, EBlendMode.Normal, EBlendMode.Normal,EBlendMode.Normal, EBlendMode.Normal, EBlendMode.Normal };
 
@@ -186,10 +190,11 @@ void setActiveBrush(int penno,int brush)
         Pen pen = Pen.current;
         penPressure = pen.pressure.ReadValue();
         _brush.Size = brushsize[activePen] * penPressure *brushsizeFactor;
-         if (activePen == 0)
+        if ((activePen == 0) | (activePen == 6))
         {
             //alpha von penpressure abhängig
-            Color c = Color.white;
+            //Color c = Color.white;
+            Color c = penColor[activePen];
             c.a = penPressure;
             _brush.BrushColor = c;
             //softness von penpressure abhängig
